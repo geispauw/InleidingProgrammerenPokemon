@@ -1,0 +1,5 @@
+progress::-webkit-progress-inner-element {
+    color: rgb(113, 154, 113);
+    border-radius: 40px;
+    padding:1px;
+}
