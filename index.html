@@ -8,8 +8,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-        <progress id="HP" value="30" max="30"></progress>
-        <progress id="EnemyHP" value="30" max="30"></progress>
-    
+    <div>
+    <p>HP</p>
+    <progress id="PlayerHP" value="30" max="30" min="0"></progress>
+    </div>
+    <div> 
+    <p>HP</p>
+    <progress id="EnemyHP" value="30" max="30" min="0"></progress>
+    </div>
+    <div class="MovesDiv">
+            <button id="Attack">Attack</button>
+            <button id="Item">Items</button>
+            <button>Run</button>
+
+    </div>
+    <div class="AttacksDiv hidden">
+            <button id ="Attack1">Boom</button>
+            <button id="Attack2"> Baam</button>
+            <button id="Attack3">Toon</button>
+            <button id="back">Terug</button>
+    </div>
+    <div class="ItemsDiv hidden">
+            <button id ="Item1">Potion</button>
+            <button id="Item2"> Strong Potion</button>
+            <button id="Terug">Terug</button>   
+    </div>
 </body>
 </html>

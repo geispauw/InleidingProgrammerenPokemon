@@ -1,5 +1,33 @@
-progress::-webkit-progress-inner-element {
-    color: rgb(113, 154, 113);
-    border-radius: 40px;
-    padding:1px;
+* {
+    margin: 0;
+}
+p, a {
+    font-family: Pokemon;
+}
+@font-face {
+    font-family: Pokemon;
+    src:url(PKMN\ RBYGSC.ttf)
+}
+div {
+    display: flex;
+}
+
+progress {
+    height: 30px;
+    color:blanchedalmond;
+    margin: 0;
+}
+
+p  {
+    margin: 7px 10px 0 10px;
+}
+
+a {
+    padding: 10px;
+    stroke: black;
+    stroke-width: 1px;
+}
+
+.hidden {
+    display: none;
 }
