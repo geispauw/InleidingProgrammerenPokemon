@@ -9,12 +9,12 @@
 </head>
 <body>
     <div>
-    <p>HP</p>
+    <p>Player HP</p>
     <progress id="PlayerHP" value="30" max="30" min="0"></progress>
     </div>
     <div> 
-    <p>HP</p>
-    <progress id="EnemyHP" value="30" max="30" min="0"></progress>
+    <p>Enemy HP</p>
+    <progress id="EnemyHP" value="60" max="30" min="0"></progress>
     </div>
     <div class="MovesDiv">
             <button id="Attack">Attack</button>
@@ -23,9 +23,9 @@
 
     </div>
     <div class="AttacksDiv hidden">
-            <button id ="Attack1">Boom</button>
-            <button id="Attack2"> Baam</button>
-            <button id="Attack3">Toon</button>
+            <button id ="Attack1">Tackle</button>
+            <button id="Attack2">Scratch</button>
+            <button id="Attack3">Growl</button>
             <button id="back">Terug</button>
     </div>
     <div class="ItemsDiv hidden">
@@ -33,5 +33,13 @@
             <button id="Item2"> Strong Potion</button>
             <button id="Terug">Terug</button>   
     </div>
+    <div class="CharizardAttackDiv hidden"> 
+        <p>Charizard is now attacking!</p>
+    </div>
+    <div class="Textbox hidden"> 
+        <p>Charizard Missed!</p>
+        <button class="RestartButton">Restart</button>
+    </div>
+    <button class="RestartButton hidden">Restart</button>
 </body>
 </html>

@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    font-family: Pokemon;
 }
 p, a {
     font-family: Pokemon;
@@ -10,24 +11,52 @@ p, a {
 }
 div {
     display: flex;
+    align-items: center;
 }
 
 progress {
-    height: 30px;
-    color:blanchedalmond;
+    height: 25px;
     margin: 0;
+    padding: 0;
 }
 
 p  {
-    margin: 7px 10px 0 10px;
+    margin: 0px 10px 0 10px;
+    font-family: Pokemon;
+    align-items: center;
 }
 
 a {
     padding: 10px;
     stroke: black;
     stroke-width: 1px;
+
 }
 
 .hidden {
     display: none;
+}
+
+button {
+    padding: 10px;
+    width: 300px;
+    height: 100px;
+    font-size: large;
+    background: rgb(244, 71, 71);
+    color: white;
+    margin:10px;
+    border-radius: 10px;
+    
+}
+
+.Textbox, .CharizardAttackDiv, .winOrLossScreen {
+    width: 1470px;
+    height: 120px;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    float:bottom;
+    justify-content: center;
 }
