@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/script/javascript.js" defer></script>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    
+
+<div> 
+    <div class="PlayerDiv "> 
+        <div class="PlayerBar">
+        <p>HP</p>
+        <progress id="PlayerHP" value="30" max="30" min="0"></progress>
+        </div>
+        <img class="SnorlaxGIF" src="images/Snorlax.gif">
+    </div>
+    <div class="EnemyDiv"> 
+        <div class="EnemyBar"> 
+        <p>HP</p>
+        <progress id="EnemyHP" value="30" max="30" min="0"></progress>
+        </div>
+        <img class="CharizardGIF" src="images/charizard-pokemon.gif">
+    </div> 
+</div>
+    <div class="BoxDiv">
+        <div class="MovesDiv">
+                <button id="Attack">Attack</button>
+                <button id="Item">Items</button>
+                <button>Run</button>
+
+        </div>
+        <div class="AttacksDiv hidden">
+                <button id ="Attack1">Tackle</button>
+                <button id="Attack2">Scratch</button>
+                <button id="Attack3">Growl</button>
+                <button id="back">Terug</button>
+        </div>
+        <div class="ItemsDiv hidden">
+                <button id ="Item1">Potion</button>
+                <button id="Item2"> Strong Potion</button>
+                <button id="Terug">Terug</button>   
+        </div>
+        <div class="CharizardAttackDiv hidden"> 
+            <p>Charizard is now attacking!</p>
+        </div>
+        <div class="Textbox hidden"> 
+            <p>Charizard Missed!</p>
+        </div>
+    </div>
+</body>
+</html>

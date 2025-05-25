@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    font-family: Pokemon;
+}
+@font-face {
+    font-family: Pokemon;
+    src:url(/fonts/PKMN\ RBYGSC.ttf)
+}
+div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+progress {
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.PlayerBar, .EnemyBar {
+    height: 40px;
+    margin: 0;
+    background-color: white;
+    border-radius: 10px;
+    width: 220px;
+    align-items: center;
+}
+
+p  {
+    font-family: Pokemon;
+    font-size: large;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    padding: 10px;
+    width: 300px;
+    height: 200px;
+    font-size: large;
+    background: rgb(244, 71, 71);
+    color: white;
+    margin:10px;
+    border-radius: 10px;
+}
+
+.PlayerBar {
+    padding:0;
+    margin:0;
+}
+
+body {
+    background-image: url(/images/Background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 1920px;
+    height: 1080px;
+}
+
+
+
+img {
+    width: 300px;
+}
+
+.PlayerDiv, .EnemyDiv {
+    justify-content: center;
+    align-items: center;
+    display:inline-block;
+}
+
+.PlayerDiv {
+    margin: 0 0 0 300px;
+    padding-top:550px;
+}
+
+.EnemyDiv {
+    margin: 200px 100px 200px 300px;
+}
+
+.BoxDiv {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+.BoxDiv p, .Textbox {
+    padding-bottom:100px;
+    padding-top:100px;
+}
+
+
+.shake {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    /* https://www.w3schools.com/howto/howto_css_shake_image.asp */
+    animation: shake 0.5s;
+  }
+  
+  @keyframes shake {
+    100% { transform: translate(5px, -4px) rotate(-1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+  }
+
+@keyframes horizontalShake {
+    100% { transform: translate(0px, -7px) rotate(-1deg); }
+    90% { transform: translate(0px, 4px) rotate(0deg); }
+    80% { transform: translate(0px, -4px) rotate(1deg); }
+    70% { transform: translate(0px, 5px) rotate(-1deg); }
+    60% { transform: translate(0px, -4px) rotate(0deg); }
+    50% { transform: translate(0px, 2px) rotate(-1deg); }
+    40% { transform: translate(0px, -1px) rotate(1deg); }
+    30% { transform: translate(0px, 2px) rotate(0deg); }
+    20% { transform: translate(0px, 0px) rotate(1deg); }
+    10% { transform: translate(0px, -2px) rotate(-1deg); }
+    0% { transform: translate(0px, 1px) rotate(0deg); }
+}
+
+.horizontalShake {
+    animation: horizontalShake 0.5s;
+}
