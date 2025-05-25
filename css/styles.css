@@ -4,7 +4,7 @@
 }
 @font-face {
     font-family: Pokemon;
-    src:url('fonts/PKMN RBYGSC.ttf')
+    src:url('../fonts/PKMN RBYGSC.ttf')
 }
 div {
     display: flex;
@@ -53,7 +53,7 @@ button {
 }
 
 body {
-    background-image: url('images/Background.png');
+    background-image: url('../images/Background.png');
     background-repeat: no-repeat;
     background-size: cover;
     width: 1920px;
