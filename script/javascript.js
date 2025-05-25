@@ -80,7 +80,7 @@ function EnemyAttack() {
     
     if (Damage > 0) {
         PlayerHP.value -= Damage;
-        TextboxDiv.textContent= "Charizard heeft " + Damage + " Damage genomen en heeft nu " + PlayerHP.value + " HP";
+        TextboxDiv.textContent= "Snorlax heeft " + Damage + " Damage genomen en heeft nu " + PlayerHP.value + " HP";
         AttackSound();
         shakeAnimationSnorlax();
         
