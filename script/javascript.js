@@ -25,10 +25,10 @@ const CharizardImg = document.querySelector(".CharizardGIF");
 const SnorlaxImg = document.querySelector(".SnorlaxGIF");
 const PlayerBar = document.querySelector(".PlayerBar");
 const EnemyBar = document.querySelector(".EnemyBar");
-const Music = [ "audio/trainer-battle-music-hq.mp3", "audio/wild-pokemon-battle-music-hq.mp3",];
-const AttackAudio = [ "audio/Tackle.mp3", "audio/Headbutt.mp3", "audio/Bite part 1.mp3", "audio/Double Hit 1hit.mp3", "audio/Double Kick 1hit.mp3", "audio/Fury Attack 1hit.mp3"];
-const HealingSound = new Audio("audio/Healing.mp3");
-const WinAudio = new Audio("audio/Victory!.mp3");
+const Music = [ "../audio/trainer-battle-music-hq.mp3", "../audio/wild-pokemon-battle-music-hq.mp3",];
+const AttackAudio = [ "../audio/Tackle.mp3", "../audio/Headbutt.mp3", "../audio/Bite part 1.mp3", "../audio/Double Hit 1hit.mp3", "../audio/Double Kick 1hit.mp3", "../audio/Fury Attack 1hit.mp3"];
+const HealingSound = new Audio("../audio/Healing.mp3");
+const WinAudio = new Audio("../audio/Victory!.mp3");
 let index = Math.floor(Math.random() * Music.length);
 let audio = new Audio(Music[index]);
 
