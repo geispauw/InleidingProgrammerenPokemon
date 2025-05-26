@@ -13,7 +13,7 @@ div {
 }
 
 progress {
-    height: 40px;
+    height: 30px;
     margin: 0;
     padding: 0;
 }
@@ -60,8 +60,6 @@ body {
     height: 1080px;
 }
 
-
-
 img {
     width: 300px;
 }
@@ -93,12 +91,11 @@ img {
     padding-top:100px;
 }
 
-
 .shake {
     /* Start the shake animation and make the animation last for 0.5 seconds */
     /* https://www.w3schools.com/howto/howto_css_shake_image.asp */
     animation: shake 0.5s;
-  }
+}
   
   @keyframes shake {
     100% { transform: translate(5px, -4px) rotate(-1deg); }
@@ -112,7 +109,7 @@ img {
     20% { transform: translate(-3px, 0px) rotate(1deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
     0% { transform: translate(1px, 1px) rotate(0deg); }
-  }
+}
 
 @keyframes horizontalShake {
     100% { transform: translate(0px, -7px) rotate(-1deg); }

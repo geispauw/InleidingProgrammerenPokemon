@@ -5,63 +5,81 @@ let EnemyHP = document.getElementById("EnemyHP");
 let PotionAmount = 5;
 let StrongPotionAmount = 3;
 let Damage;
-const Attackbutton = document.getElementById("Attack");
+
+//Moves Buttons
+const Attack = document.getElementById("Attack");
+const Item = document.getElementById("Item");
+const AudioButton = document.getElementById("Sound");
+const AllButtons = document.querySelectorAll("button");
+
+
+//All divs 
 const AttackDiv = document.querySelector(".AttacksDiv");
 const MovesDiv = document.querySelector(".MovesDiv");
-const ItemsDiv = document.querySelector(".ItemsDiv")
-const Attack = document.getElementById("Attack");
+const ItemsDiv = document.querySelector(".ItemsDiv");
+const CharizardDiv = document.querySelector(".CharizardAttackDiv");
+const TextboxDiv = document.querySelector(".Textbox");
+
+//All attack Buttons
 const Attack1 = document.getElementById("Attack1");
 const Attack2 = document.getElementById("Attack2");
 const Attack3 = document.getElementById("Attack3");
-const Items = document.querySelector(".ItemsDiv");
-const Item = document.getElementById("Item");
+
+//All item buttons.
 const Item1 = document.getElementById("Item1");
 const Item2 = document.getElementById("Item2");
 const Item3 = document.getElementById("Terug");
 const Terug = document.getElementById("back");
-const CharizardDiv = document.querySelector(".CharizardAttackDiv");
-const TextboxDiv = document.querySelector(".Textbox");
+
+//Player and enemy variables
 const CharizardImg = document.querySelector(".CharizardGIF");
 const SnorlaxImg = document.querySelector(".SnorlaxGIF");
 const PlayerBar = document.querySelector(".PlayerBar");
 const EnemyBar = document.querySelector(".EnemyBar");
-const Music = [ "../audio/trainer-battle-music-hq.mp3", "../audio/wild-pokemon-battle-music-hq.mp3",];
-const AttackAudio = [ "../audio/Tackle.mp3", "../audio/Headbutt.mp3", "../audio/Bite part 1.mp3", "../audio/Double Hit 1hit.mp3", "../audio/Double Kick 1hit.mp3", "../audio/Fury Attack 1hit.mp3"];
-const HealingSound = new Audio("../audio/Healing.mp3");
-const WinAudio = new Audio("../audio/Victory!.mp3");
-let index = Math.floor(Math.random() * Music.length);
-let audio = new Audio(Music[index]);
 
-// AUDIO CREDITS: 
-//https://www.reddit.com/r/PokemonROMhacks/comments/9xgl7j/pokemon_sound_effects_collection_over_3200_sfx/ 
-//https://www.youtube.com/watch?v=yw33S0GEu_o&ab_channel=Mooshorterproductions 
-//https://www.youtube.com/watch?v=pXJ9Sn5lEHc&ab_channel=Pokeli
-//https://www.youtube.com/watch?v=3VHvOeuy_Ak&t=4s&ab_channel=Pokeli
-//https://www.youtube.com/watch?v=RnzWt5bTaYw&ab_channel=Nullfuchs
+//Music and sound variables (Vooral geschreven door ChatGPT, aangepast voor mezelf.)
+//Prompt: "Hoe maak je muziek dat in een random order begint?"
+const Music = [ "audio/trainer-battle-music-hq.mp3", "audio/wild-pokemon-battle-music-hq.mp3",];
+const AttackAudio = [ "audio/Tackle.mp3", "audio/Headbutt.mp3", "audio/Bite part 1.mp3", "audio/Double Hit 1hit.mp3", "audio/Double Kick 1hit.mp3", "audio/Fury Attack 1hit.mp3"];
+const HealingSound = new Audio("audio/Healing.mp3");
+const WinAudio = new Audio("audio/Victory!.mp3");
+const AButton = new Audio ("audio/AButton.mp3");
+let index = Math.floor(Math.random() * Music.length);
+let musicAudio = new Audio(Music[index]);   
+WinAudio.volume=0.5;
+musicAudio.volume=0.5;
+
+
 
 
 //Audio Stuff
-audio.play();
-audio.addEventListener("ended", playNext);
-WinAudio.volume=0.5;
-audio.volume=0.5;
+function MusicFunction() {
+    musicAudio.play();
+    musicAudio.addEventListener("ended", playNext); //Checkt of de muziek klaar is, en speelt de volgende als het klaar is.
+};
+
+function AbuttonSound() {
+    AButton.play();
+    AButton.volume=0.25;
+};
+
 //GPT
 function playNext() {
     index = (index + 1) % tracks.length; // Go to next, loop back to start
-    audio = new Audio(tracks[index]);
-    audio.play();
-    audio.addEventListener("ended", playNext);
-  }
+    musicAudio = new Audio(tracks[index]);  //Gooit een dice op basis van het aantal tracks en kiest er eentje
+    musicAudio.play();
+    musicAudio.addEventListener("ended", playNext);
+};
 
 function AttackSound() {
-    let AttackIndex = Math.floor(Math.random() * AttackAudio.length);
-    let AudioAttack = new Audio(AttackAudio[AttackIndex]);
+    let AttackIndex = Math.floor(Math.random() * AttackAudio.length); //Gooit een dice op basis van het aantal tracks en kiest er eentje
+    let AudioAttack = new Audio(AttackAudio[AttackIndex]); 
     AudioAttack.play();
-  }
+};
+//--
 
-
-
-//Calculates Enemy Accuracy every turn, and bases its move off htat.
+//Calculates Enemy Accuracy every turn, and bases its move off that.
+//Met behulp van Lisette geoptimized
 function CalculateDamage() {
     const EnemyAccuracy = Math.floor(Math.random()*(100-50+1))+50;
     if (EnemyAccuracy >= 50) {
@@ -76,19 +94,18 @@ function CalculateDamage() {
 };
 
 function EnemyAttack() {
-    CalculateDamage();
-    
+    CalculateDamage(); 
     if (Damage > 0) {
         PlayerHP.value -= Damage;
         TextboxDiv.textContent= "Snorlax heeft " + Damage + " Damage genomen en heeft nu " + PlayerHP.value + " HP";
         AttackSound();
         shakeAnimationSnorlax();
-        
     } else {
         TextboxDiv.textContent= "Charizard heeft gemist";
     }
 };
 
+//Player Attack functions
 function PlayerAttack1() {
     let Damage = Math.floor(Math.random()*3)+4; //Damage tussen 4 en 7
     EnemyHP.value-= Damage;
@@ -195,18 +212,19 @@ function CharizardDmgCheck() {
 };
 
 function WinningAudio() {
-    
     audio.pause();
-}
+};
+
 //Checks who won, first it checks if the player did enough damage to finish the enemy.
 //if they didnt, it continues and after the enemy attacks, it checks if they did enough damage to finish the player.
+//Gemaakt met behulp van Julian
 function PostMoveCheck() {
     if (EnemyHP.value <= 0) {
         TextboxDiv.classList.remove("hidden");
         TextboxDiv.textContent= "Je hebt Gewonnen!";
         AttackDiv.classList.add("hidden");
         WinAudio.play();
-        audio.pause();
+        Music.pause();
     } else {
         CharizardAttackDiv();
         setTimeout(CharizardDmgCheck, 1000);
@@ -225,9 +243,9 @@ function PlayerHPCheck () {
     } else {
         setTimeout(BacktoMoves, 2000);
         setTimeout(TextBackToMoves, 2000);
-        }
+    }
 };
-
+//--
 
 Attack.addEventListener("click", ChangetoAttack);
 
@@ -268,7 +286,6 @@ Attack3.addEventListener("click", () => {
 
 Terug.addEventListener("click", BacktoMoves);
 
-
 function shakeAnimationCharizard() {
     CharizardImg.classList.add("shake");
     EnemyBar.classList.add("horizontalShake");
@@ -277,11 +294,19 @@ function shakeAnimationCharizard() {
 function shakeAnimationSnorlax() {
     PlayerBar.classList.add("horizontalShake");
     SnorlaxImg.classList.add("shake"); 
-}
+};
 
+//Reset all animations so they can be used again.
 function resetAnimations() {
     CharizardImg.classList.remove("shake");
     SnorlaxImg.classList.remove("shake");
     PlayerBar.classList.remove("horizontalShake");
     EnemyBar.classList.remove("horizontalShake");
-}
+};
+
+AudioButton.addEventListener("click", MusicFunction);
+
+AllButtons.forEach(button => {
+    button.addEventListener("click", AbuttonSound)
+});
+

@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script/javascript.js" defer></script>
+    <title>PokemonClone</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="/images/Poké_Ball_icon.svg.png">
 </head>
 <body>
-
-    
 
 <div> 
     <div class="PlayerDiv "> 
@@ -27,23 +25,23 @@
         <img class="CharizardGIF" src="images/charizard-pokemon.gif">
     </div> 
 </div>
-    <div class="BoxDiv">
-        <div class="MovesDiv">
-                <button id="Attack">Attack</button>
-                <button id="Item">Items</button>
-                <button>Run</button>
 
+<div class="BoxDiv">
+    <div class="MovesDiv">
+            <button id="Attack">Attack</button>
+            <button id="Item">Items</button>
+            <button id="Sound">Run</button>
         </div>
         <div class="AttacksDiv hidden">
-                <button id ="Attack1">Tackle</button>
-                <button id="Attack2">Scratch</button>
-                <button id="Attack3">Growl</button>
-                <button id="back">Terug</button>
+            <button id ="Attack1">Tackle</button>
+            <button id="Attack2">Scratch</button>
+            <button id="Attack3">Quick Attack</button>
+            <button id="back">Terug</button>
         </div>
         <div class="ItemsDiv hidden">
-                <button id ="Item1">Potion</button>
-                <button id="Item2"> Strong Potion</button>
-                <button id="Terug">Terug</button>   
+            <button id ="Item1">Potion</button>
+            <button id="Item2"> Strong Potion</button>
+            <button id="Terug">Terug</button>   
         </div>
         <div class="CharizardAttackDiv hidden"> 
             <p>Charizard is now attacking!</p>
@@ -51,6 +49,11 @@
         <div class="Textbox hidden"> 
             <p>Charizard Missed!</p>
         </div>
-    </div>
+</div>
+
+<audio src="audio/wild-pokemon-battle-music-hq.mp3"></audio>
+<audio src="audio/trainer-battle-music-hq.mp3"></audio>
+
+<script src="script/javascript.js" defer></script>
 </body>
 </html>
